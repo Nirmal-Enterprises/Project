@@ -35,9 +35,6 @@ app.controller('categoryCtrl',['$scope' ,'$http', 'homeService', '$timeout','$an
             $scope.etalage = "";
         }
     });*/
-    $(document).ready(function(){
-       alert("") 
-    });
 $scope.submitted=false;
     $scope.showModal=false;
     $scope.showPage=false;
@@ -85,12 +82,16 @@ $scope.submitted=false;
     $scope.openModal = function(){
         $scope.showModal = !$scope.showModal;
     }
-$scope.submitQuery = function () {
+$scope.submitQuery = function (form) {
+var formElement = angular.element(form);
+var formValid = formElement[0].$valid;
+//console.log(elem[0].$valid);
 $scope.submitted=true;
+if (formValid){
 var to="tapeshkumar93@gmail.com";
 var cc= "vicksjain2@gmail.com";
 
-document.getElementById("message").textContent = "";
+//document.getElementById("message").textContent = "";
 
 var request = $http({
     method: "post",
@@ -106,7 +107,9 @@ var request = $http({
     headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8;' }
 }).then(function (data) {
     if(data.data == 1){
-document.getElementById("message").textContent = "Your Query was received successfully :)";
+//document.getElementById("message").textContent = "Your Query was received successfully :)";
+$scope.modalHeader = "Successful";
+$scope.modalBody = "Your query is recieved successfully. We will get back to you soon.";
 $scope.email="";
 $scope.enquiry="";
 $scope.phone="";
@@ -115,11 +118,12 @@ $scope.submitted=false;
 $scope.showModal=true;
 }
 else {
-document.getElementById("message").textContent = "Please Try Again";
+$scope.modalHeader = "Something Went Wrong";
+$scope.modalBody = "Please try Again, Or reach out to us at +91-9677242274.";
 }
 });
 /* Check whether the HTTP Request is successful or not. */
-
+}
 }
 
 

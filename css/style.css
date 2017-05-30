@@ -664,7 +664,7 @@ li.grid_1_of_4:hover {
 
 .images_1_of_4 {
     width: 190px;
-    border: 1px solid rgba(203, 187, 187, 0.23);
+    border: 1px solid #cbbbbb;
     text-align: center;
     position: relative;
     background: #FFF;
@@ -686,7 +686,7 @@ li.grid_1_of_4:hover {
 }
 
 .images_1_of_4 h4 a {
-    color: #03649b;
+    color: #f7941e;
     font-size: 16px;
     padding-bottom: 5px;
 }
@@ -1537,7 +1537,7 @@ li.grid_1_of_4:hover {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     -webkit-appearance: none;
 }
-form.ng-submitted input.ng-invalid,form.ng-submitted textarea.ng-invalid {
+.contact-form input.error,.contact-form textarea.error {
   border:1px solid #f00;
     -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
@@ -1581,6 +1581,26 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 .map iframe {
     height: 300px;
 }
+#product-image{  
+        float: left;  
+    }  
+
+    .parentimage{  
+    position:fixed;
+        width: 300px;  
+        height: 400px;  
+    }  
+    .parentimageLarge{  
+        position:relative;  
+        width: 0px;
+        left:310px;
+        transition: width 0.3s linear 0s;  
+        z-index: 12;  
+    }  
+    .parentimage:hover + .parentimageLarge{  
+        width:700px;  
+        height:900px;                 
+    }         
 
 
 /**** Responsive Layout ****/
@@ -1650,28 +1670,25 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
         float: right;
         width: 32px;
         height: 32px;
-        margin-top: 42px;
+        margin-top: 15px;
     }
     .menu .navigation {
         display: none;
     }
     .menu:hover .navigation {
-         display: block;
-    width: 170px;
-    border: 1px solid rgb(228, 129, 9);
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1021
-    transition: ease 0.5s;
-    margin: 0;
-    bottom: 0;
-    background-color: aliceblue;
+        display: block;
+        width: 170px;
+        border: 1px solid #000;
+        position: absolute;
+        top: 57px;
+        right: 0;
+        z-index: 102;
+        transition: ease 0.5s;
     }
     .menu .navigation li {
         width: 75%;
-    /* border-bottom: 1px solid #000; */
-    border-radius: 0 !important;
+        border-bottom: 1px solid #000;
+        border-radius: 0 !important;
     }
     .menu .navigation li:active .navigation {
         display: none;
@@ -1772,7 +1789,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
         padding: 8px 0;
     }
     .menu:hover .navigation {
-       /* top: 45px;*/
+        top: 45px;
     }
     .toggleMenu {
         width: 94%;
@@ -1818,9 +1835,6 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
         width: 35%;
         margin-top: 2px;
     }
-   .menu{
-        margin-top: 15px;
-    }
    .wrap .logo img {
         width: 120px;
     }
@@ -1834,9 +1848,6 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
     .slider-text p {
         margin: 8px 0;
         font-size: 14px;
-    }
-    .menu .navigation{
-        margin-top: 10px;
     }
     .navigation span.left-ribbon {
         background-size: 70%;
@@ -2104,18 +2115,17 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
     display: inline-block;
     border-radius: 5px;
     float: right;
-    margin-top: 37px;
+    margin-top: 40px;
 }
 
 .navigation li {
-      float: left;
-    border-bottom: 1px solid #e38109;
+    float: left;
+    border: 1px solid #03639b;
     color: #03639b;
-    padding: 15px 10px 15px 30px;
+    padding: 10px 10px 10px 30px;
     background-position: 10px;
     cursor: pointer;
     transition: ease 0.5s;
-    background-color: aliceblue;
 }
 
 .navigation li:hover {
