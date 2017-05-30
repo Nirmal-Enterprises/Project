@@ -1677,18 +1677,23 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
     }
     .menu:hover .navigation {
         display: block;
-        width: 170px;
-        border: 1px solid #000;
-        position: absolute;
-        top: 57px;
-        right: 0;
-        z-index: 102;
-        transition: ease 0.5s;
+    	width: 170px;
+  	border: 1px solid #f7941e;
+        position: fixed;
+  	margin: 0;
+  	right: 0;
+  	z-index: 102;
+ 	transition: ease 0.5s;
+ 	top: 0;
+	height: 100%;
+	background: aliceblue;
     }
     .menu .navigation li {
         width: 75%;
-        border-bottom: 1px solid #000;
+	border:none;
+	border-bottom:1px solid #f7941e;
         border-radius: 0 !important;
+	padding: 15px 35px 15px;
     }
     .menu .navigation li:active .navigation {
         display: none;
