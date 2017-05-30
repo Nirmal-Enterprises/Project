@@ -2639,3 +2639,17 @@ to prevent collapsing during animation*/
     height: 27px;
     transition: 0.5s ease-all;
 }
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}
