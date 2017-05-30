@@ -1,22 +1,6 @@
-var app = angular.module("myApp", ['ui.router','ui.bootstrap']);
+var app = angular.module("myApp", ['ui.router']);
 app.config(function($stateProvider,$urlRouterProvider){
-  $scope.myInterval = 3000;
-  $scope.slides = [
-    {
-      image: 'http://lorempixel.com/400/200/'
-    },
-    {
-      image: 'http://lorempixel.com/400/200/food'
-    },
-    {
-      image: 'http://lorempixel.com/400/200/sports'
-    },
-    {
-      image: 'http://lorempixel.com/400/200/people'
-    }
-  ];
-        
-    $urlRouterProvider.otherwise('/home');
+ $urlRouterProvider.otherwise('/home');
     
     $stateProvider
         
