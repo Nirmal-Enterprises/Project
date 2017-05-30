@@ -1,0 +1,26 @@
+<div class="main" ng-controller="productCtrl">
+      <div class="content">
+    	  <div class="content_bottom">
+    	    <div class="wrap">
+    	    	<div class="content-bottom-right">
+    	    	<h3>Browse All Categories</h3>
+	            <ul class="section group">
+                <li class="grid_1_of_4 images_1_of_4" ng-repeat="product in products | filter : {type : productItemType }" >
+					 <h4><a class="product_head">{{product.model}} </a></h4>
+					  <a ui-sref="productinfo"><img src="{{product.src}}" alt="" /></a>
+					  <div class="price-details">
+				       <div class="price-number">
+					    </div>
+					       		<div class="add-cart">						
+									<h4><a ui-sref="productinfo" class="more_info">More Info</a></h4>
+							     </div>
+							 <div class="clear"></div>
+					</div>		
+                    </li>  
+			   </ul>
+		      </div>
+		      <div class="clear"></div>
+		   </div>
+         </div>
+      </div>
+    </div>

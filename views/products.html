@@ -1,0 +1,41 @@
+<div class="main">
+      <div class="content">
+    	  <div class="content_bottom">
+    	    <div class="wrap">
+                <h3 class="fan_bg">Our Products</h3>    
+    	    	<div class="content-bottom-right ul_container">
+	            <ul class="section group">
+                <li class="prod_category" ng-repeat="item in items" ng-style="{'background-image':'url({{item.src}})'}" ng-click="setData(item.product_item)" ng-class="{'prod_selected' : item.product_item == productItemType}">
+                    <div class="product_txt">{{item.product_item}}</div>
+                    
+                    </li>  
+			   </ul>
+		      </div>
+		      <div class="clear"></div>
+                <!--domestic appliance-->
+                <div class="content-bottom-right ul_container" ng-if="productItemType == 'Domestic Appliances'">
+	            <ul class="section group">
+                <li class="domestic_list" ng-repeat="appliance in appliances" ng-style="{'background-image':'url({{appliance.src}})'}" ng-click="setProductData(appliance.type)" ng-class=" {'domesticSelected' : appliance.type == productItemSubType }">
+					<div class="product_txt">{{appliance.type}}</div>
+                    </li>  
+			   </ul>
+		      </div>
+                <!--domestic appliance ends-->
+		      <div class="clear"></div>
+                <div id="products"  class="content-bottom-right">
+    	    	<h3 ng-if="productItemType">{{productItemType}} <span  ng-if="productItemSubType">:: {{productItemSubType}}</span></h3>
+		      </div>
+ <div class="content-bottom-right ul_container card_view_container">
+ <ul class="section group card_view">
+                <li class="grid_1_of_4 images_1_of_4" ng-repeat="product in products | filter : myFilter" ui-sref="productinfo" ng-click="setProduct(product)">
+					  <a><img src="{{product.src}}" alt="" /></a>
+					 <h4><a class="product_head">{{product.model}} - {{product.capacity}} </a></h4>
+					<!--  <h4><a ui-sref="productinfo" class="more_info">More Info</a></h4>-->
+							   
+							 <div class="clear"></div>
+                    </li>  
+			   </ul></div>
+		   </div>
+         </div>
+      </div>
+    </div>

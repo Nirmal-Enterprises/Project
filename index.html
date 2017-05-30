@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<head>
+<title>Nirmal Enterprises</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/etalage.css">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/F4A08FB7-EE20-4449-8987-B19C57B8781E/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E1878B75C91B-7898-9444-02EE-7BF80A4F/abn/main.css"/><script type="text/javascript" src="js/jquery-1.9.0.js"></script>
+<script src="js/jquery.etalage.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+
+    
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/angular-ui-router.js"></script>
+<script type="text/javascript" src="controllers/categoryCtrl.js"></script> 
+<script type="text/javascript" src="controllers/product_details.js"></script> 
+<script type="text/javascript" src="services/homeService.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function() {			
+        $().UItoTop({ easingType: 'easeOutQuart' });	
+    });
+
+</script>
+  
+</head>
+<body  ng-app="myApp" ng-controller="categoryCtrl">
+<div ng-include="'views/header.html'"></div>
+<div ui-view></div>
+<div ng-include="'views/footer.html'"></div>	
+    <a ng-click="scrollToTop()" id="toTop"> </a>
+
+</body>
+</html>

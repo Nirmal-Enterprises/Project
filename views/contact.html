@@ -1,0 +1,56 @@
+<div class="main" ng-controller="categoryCtrl">
+ 	<div class="wrap">
+     <div class="preview-page">
+     				<div class="contact_info">
+					    	  <div class="map">
+							   	    <iframe width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.107545203168!2d80.27953401491362!3d13.092370140776751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd53a5bd4ee226cf2!2sNirmal+Enterprises!5e0!3m2!1sen!2sin!4v1491734171002"></iframe><br><small><a href="https://www.google.co.in/maps/place/Nirmal+Enterprises/@13.0923701,80.279534,17z/data=!4m8!1m2!2m1!1snirmal+enterprise+chennai+tamilnadu!3m4!1s0x0:0xd53a5bd4ee226cf2!8m2!3d13.0914516!4d80.2815722" style="color:#888;text-align:left;font-size:0.85em">View Larger Map</a></small>
+							  </div>
+      				</div>
+				  <div class="contact-form">
+				  	<h3>Contact Us</h3>
+					    <form name="form" novalidate>
+                            <div class="input-box">
+                                    <input type="text" name="name" class="textbox textbox1"  placeholder="Your Name"  ng-model="name" required />
+                                <p><span class="help-inline" ng-show="submitted && form.name.$error.required">Please enter your Name</span></p> </div>
+                                 <div class="input-box">
+                                  <input type="text" name="email" class="textbox" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"  placeholder="Your Email ID"  ng-model="email" required />
+                            <p>  <span class="help-inline" ng-show="submitted && form.email.$error.required">Please enter your Email ID</span></p>
+                                     <span class="help-inline" ng-show="form.email.$error.pattern">Please enter valid Email ID.</span>
+                            </div>
+                                 <div class="input-box">
+                                    <input type="text" only-numbers name="phone" class="textbox "placeholder="Your Number"  ng-model="phone" ng-pattern="/^\d{0,10}(\.\d{1,9})?$/" required />
+                            <p><span class="help-inline" ng-show="submitted && form.phone.$error.required">Please enter your Number</span></p>
+                            <span class="help-inline" ng-show="form.phone.$error.pattern">Please enter valid mobile number.</span>
+                            </div>
+						
+						    <div class="mB10">
+						    	<span>
+                                  <textarea name="enquiry" placeholder="Your Enquiry" ng-model="enquiry"required></textarea>
+                                   <p><span class="help-inline" ng-show="submitted && form.enquiry.$error.required">Please write your query</span></p>
+                                </span>
+                            </div>
+			<span id="message"></span>			   <div>
+						   		<input type="submit" value="Submit" name="submit" class="mybutton" ng-click="submitted==true;submitQuery()">
+						   		<div class="clear"></div>
+						  </div>
+					    </form>
+                      
+         </div>
+			  </div>		
+         </div> 
+    
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal" ng-if="showModal">
+    <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" ng-click="openModal()">&times;</span>
+      <h2>Successful</h2>
+    </div>
+    <div class="modal-body">
+      <p>Your query is recieved successfully. We will get back to you soon. </p>
+          <input type="submit" value="close" name="submit"  class="mybutton modal_button" ng-click="openModal()">
+    </div>
+  </div>
+</div>

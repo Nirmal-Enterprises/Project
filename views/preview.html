@@ -1,0 +1,111 @@
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/F4A08FB7-EE20-4449-8987-B19C57B8781E/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E1878B75C91B-7898-9444-02EE-7BF80A4F/abn/main.css"/><script type="text/javascript">
+var windowSize = $(document).width();
+function sizing() {
+console.log("in Sizing "+windowSize);
+//if(windowSize > 1024){
+//console.log("in Sizing -ETALAGE "+windowSize);
+                $('#etalage').etalage({
+                    thumb_image_width: 300,
+                    thumb_image_height: 400,
+                    source_image_width: 630,
+                    source_image_height: 870,
+zoom_area_width:800,zoom_easing:true,smallthumb_hide_single:true,autoplay:false
+                });
+            //   };
+}
+$(document).ready(sizing);
+$(window).resize(function(){
+    var width = $(document).width();
+  console.log("resized- "+width);
+  if(windowSize != width){
+    console.log("in resize "+windowSize+"-"+width);
+    sizing();
+    windowSize= width;
+    console.log("in resize "+windowSize+"-"+width);
+  }
+});
+		</script>
+<div class="main" ng-controller="product_details">
+   	 <div class="wrap">
+   	 	<div class="preview-page">
+   	 	       <div class="section group">
+				<div class="cont-desc" style="width: 100%">
+					<ul class="back-links">
+						<li><a href="#">Home</a> ::</li>
+                        <li>{{productDetail.type}}</li>
+						<div class="clear"> </div>
+					</ul>
+				  <div class="product-details">	
+					<div class="grid images_3_of_2">
+							<ul id="etalage">
+			<li>				
+                              <!--  <img class="etalage_thumb_image" src="{{productDetail.src}}" />-->
+                                <img class="etalage_source_image" src="{{productDetail.src}}" title="" />
+							
+			</li>				
+						</ul>
+				     </div>
+				   <div class="desc span_3_of_2">
+					<h2>{{productDetail.model}}</h2>
+					<div class="available">                      
+                          <div class="tabPanel-widget">
+                                <label for="tab-1" tabindex="0"></label>
+                                  <input id="tab-1" type="radio" name="tabs" checked="true" aria-hidden="true">
+                                <h2 class="features_label">Specification</h2>
+                                <div class="box_shadow">
+                                <ul class="features_list">
+                            <!--body / element type -->
+                            <li ng-if= "productDetail.body_type != ''">
+                                <span ng-if="productDetail.type == 'Water Heaters'">Geyser Body Type : </span>
+                                <span ng-if="productDetail.type == 'Heating Elements'">Element : </span>
+                                &nbsp; {{productDetail.body_type}}</li>
+                            
+                            <!--Product capacity-->
+                            <li ng-if="productDetail.capacity != ''">
+                                <span ng-if="productDetail.type == 'Water Heaters'">Capacity : </span>
+                                <span ng-if="productDetail.type == 'Heating Elements' || (productDetail.type == 'Domestic Appliances' &&  productDetail.sub_type != 'Oven')">Wattage : </span>
+                                <span ng-if="productDetail.type == 'Domestic Appliances' &&  productDetail.sub_type == 'Oven'">Size : </span>
+                                &nbsp;  {{productDetail.capacity}}</li>
+                            
+                            <!--product element type-->
+                            <li ng-if="productDetail.element"><span ng-if="productDetail.type == 'Water Heaters'">Element : </span>&nbsp; {{productDetail.element}}</li>
+                            
+                            <!--product tank feature-->
+                            <li ng-if="productDetail.tank"><span>Tank : </span>&nbsp; {{productDetail.tank}}</li>
+                            
+                            <!--other features-->
+                            <div ng-if = "features">
+                                <li><span>Other Features : </span></li>
+                                <div  ng-repeat = "feature in features">{{feature}}</div>
+                            </div>
+                            
+                            <!--instructions-->
+                            <div ng-if = "instructions">
+                                <li><span>Instructions : </span></li>
+                                <div  ng-repeat = "instruction in instructions">{{instruction}}</div>
+                            </div>
+                                    </ul>
+                                </div>
+                                <label for="tab-2" tabi ndex="0"></label>
+                                <input id="tab-2" type="radio" name="tabs" aria-h idden="true">
+                                <h2 class="specs_label" ng-if="specs">Features</h2>
+                               <div class="resp-tabs-container box_shadow" ng-if="specs">
+                                   <div class="product-specifications">
+                                        <ul>
+                                          <li ng-repeat="spec in specs"><span class="specification-heading">{{spec}}</span> <div class="clear"></div></li>
+                                        </ul>
+				 	              </div>
+			  </div>
+                                    
+                                
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+      </div>
+ 		 		   </div>
+ 		 		</div>
+   	 		</div>
+        </div>
