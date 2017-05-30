@@ -1,7 +1,21 @@
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/F4A08FB7-EE20-4449-8987-B19C57B8781E/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E1878B75C91B-7898-9444-02EE-7BF80A4F/abn/main.css"/><script>
+<script>
 $(document).ready(function(){
-                    
-                  });
+    $(window).on("resize", function () {
+     if($(window).width() > 905)
+         $(".navigation").show();
+    });
+    $(".navigation").hide();
+	$('#nav-icon1').click(function(){
+        $('#nav-icon1').toggleClass("right");
+		$(this).toggleClass('open');
+        $(".navigation").toggle();
+    
+	});
+    $('.navigation li').click(function(){
+    $(".navigation").hide();
+    $('#nav-icon1').removeClass("right open");
+    });
+    }).trigger('resize');
 </script>
 <header>
   	  		<div class="wrap">       
@@ -9,6 +23,11 @@ $(document).ready(function(){
 						<a href="index.html"><img src="img/logo.png" alt="" /></a>
 					</div>
                 <div class="menu">
+                    <div id="nav-icon1">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
 						<ul class="navigation" >
                             <li class="home" ui-sref="home" ng-click="setData(null)"><span class="nav_txt">Home</span></li>
                             <li class="geysers" ui-sref="home" ng-click="setData('Water Heaters')"><span class="nav_txt">Heaters</span></li>
