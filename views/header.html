@@ -1,15 +1,16 @@
 <script>
        $(document).ready(function () {
-                $("#nav-icon1").click(function(){
+                $("#nav-icon1 , .navigation li").click(function(){
                 $(".navigation").toggleClass("nav-open");
-                $(this).toggleClass('open');
-                $(this).toggleClass("ham-open");
+                $("#nav-icon1").toggleClass('open');
+                $("#nav-icon1").toggleClass("ham-open");
                 $("body").toggleClass('no-scroll');
                 $(".wrapper").toggleClass('active');    
                 });
            
         $(document).mouseup(function(e){
     var container = $(".navigation , .open");
+            var newcontainer = $(".navigation li");
     if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
          $(".navigation").removeClass("nav-open");
