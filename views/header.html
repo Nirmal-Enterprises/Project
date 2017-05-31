@@ -1,35 +1,24 @@
 <script>
-$(document).ready(function(){
-    $(window).on("resize", function () {
-     if($(window).width() > 905)
-         $(".navigation").show();
-    });
-    $(".navigation").hide();
-	$('#nav-icon1').click(function(){
-        $('#nav-icon1').toggleClass("right");
-		$(this).toggleClass('open');
-        $(".wrapper").toggleClass('active');
-        $(".navigation").toggle();
-    
-	});
-    $('.navigation li').click(function(){
-    $(".navigation").hide();
-    $('#nav-icon1').removeClass("right open");
-         $(".wrapper").removeClass('active');
-    });
-    $(document).mouseup(function(e) 
-{
-    var container = $(".navigation");
-
-    // if the target of the click isn't the container nor a descendant of the container
+       $(document).ready(function () {
+                $("#nav-icon1").click(function(){
+                $(".navigation").toggleClass("nav-open");
+                $(this).toggleClass('open');
+                $(this).toggleClass("ham-open");
+                $("body").toggleClass('no-scroll');
+                $(".wrapper").toggleClass('active');    
+                });
+           
+        $(document).mouseup(function(e){
+    var container = $(".navigation , .open");
     if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        container.hide();
-         $('#nav-icon1').removeClass("right open");
-         $(".wrapper").removeClass('active');
+         $(".navigation").removeClass("nav-open");
+         $('#nav-icon1').removeClass("ham-open open");
+         $("body").removeClass('no-scroll');       $(".wrapper").removeClass('active');
     }
-});
-    }).trigger('resize');
+            });
+       });
+           
 </script>
 <header>
   	  		<div class="wrap">       

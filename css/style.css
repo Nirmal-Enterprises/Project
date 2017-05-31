@@ -84,6 +84,7 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: content-box;
 }
 
 article,
@@ -136,7 +137,10 @@ a {
     text-align: right;
 }
 
-
+.no-scroll{
+    position:fixed;
+    width:100%;
+}
 /* text align right */
 
 .txt-lt {
@@ -1594,7 +1598,11 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 
 
 /**** Responsive Layout ****/
-
+@media only screen and (min-width: 905px) { 
+    .menu .navigation{
+         display:block!important;
+}
+}
 @media only screen and (max-width: 1366px) {
     .wrap {
         width: 90%;
@@ -1667,19 +1675,27 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
         top: 40px;
     }
     .menu .navigation {
-        display: none;
-    }
-    .menu .navigation {
     	width: 170px;
         border: 1px solid #f7941e;
         position: fixed;
         margin: 0;
-        right: 0;
+        right: -172px;
         z-index: 1000;
-        transition: ease 0.5s;
         top: 0;
         bottom: 0;
         background: aliceblue;
+        -webkit-transition: .4s ease-in-out !important;
+    -moz-transition: .4s ease-in-out  !important;
+    -o-transition: .4s ease-in-out !important;
+    transition: .4s ease-in-out !important;
+    }
+    .nav-open{
+        position: fixed;
+        right:0 !important;
+        -webkit-transition: .4s ease-in-out !important;
+    -moz-transition: .4s ease-in-out  !important;
+    -o-transition: .4s ease-in-out !important;
+    transition: .4s ease-in-out !important;
     }
     .wrapper.active{
          width:100%;
@@ -2652,7 +2668,7 @@ to prevent collapsing during animation*/
 #nav-icon1{
     display: none;
   width: 30px;
-  height: 45px;
+  height: 21px;
   position: absolute;
   right: 20px;
   -webkit-transform: rotate(0deg);
@@ -2666,12 +2682,8 @@ to prevent collapsing during animation*/
   cursor: pointer;
   z-index: 999;
 }
-.right{
-    right:180px !important;
-    -webkit-transition: .2s ease-in-out !important;
-    -moz-transition: .2s ease-in-out  !important;
-    -o-transition: .2s ease-in-out !important;
-    transition: .2s ease-in-out !important;
+.ham-open{
+    right: 182px !important;
 }
 #nav-icon1 span {
   display: block;
@@ -2686,10 +2698,10 @@ to prevent collapsing during animation*/
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+  -moz-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
 }
 
 #nav-icon1 span:nth-child(1) {
