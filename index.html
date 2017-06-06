@@ -19,17 +19,29 @@
 <script type="text/javascript">
     $(document).ready(function() {          
         $().UItoTop({ easingType: 'easeOutQuart' });    
+   
+      /*    $(window).load(function () {
+              alert("hg");
+        setTimeout(function(){
+            $('#preloader').fadeOut('slow', function () {
+            });
+        },5000); // set the time here
+    }); */
+        $(window).ready(function () {
+     $('#preloader').fadeOut('slow',function(){$(this).remove();});
+   });
     });
 
 </script>
   
 </head>
 <body  ng-app="myApp" ng-controller="categoryCtrl">
+    <div id="preloader"></div>
     <div class="wrapper"></div>
 <div ng-include="'views/header.html'"></div>
 <div ui-view></div>
 <div ng-include="'views/footer.html'"></div>    
     <a ng-click="scrollToTop()" id="toTop"> </a>
-
+    </div>
 </body>
 </html>

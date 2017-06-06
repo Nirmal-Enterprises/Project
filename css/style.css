@@ -245,7 +245,6 @@ img {
 
 body {
     font-family: 'Ubuntu Condensed', sans-serif;
-    background: #ebebeb;
 }
 
 .wrap {
@@ -658,13 +657,15 @@ li.grid_1_of_4:hover {
 
 .images_1_of_4 {
     width: 190px;
-    border: 1px solid #cbbbbb;
+    border-bottom: 1px solid #cbbbbb;
     text-align: center;
     position: relative;
     background: #FFF;
-    border-radius: 3px;
+    /*border-radius: 3px;*/
     cursor: pointer;
-    padding: 0 0 15px;
+    padding: 0 5px;
+    /*border-right: 1px solid #cbbbbb;*/
+    margin: 0 3px 15px;
 }
 
 
@@ -674,13 +675,15 @@ li.grid_1_of_4:hover {
 }*/
 
 .images_1_of_4 img {
+    width: 92%;
     max-width: 100%;
     height: 250px;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
+    border-bottom: 1px solid;
 }
 
 .images_1_of_4 h4 a {
-    color: #f7941e;
+    color: #000;
     font-size: 16px;
     padding-bottom: 5px;
 }
@@ -798,12 +801,12 @@ li.grid_1_of_4:hover {
     padding: 15px 0;
     width: 100%;
     z-index: 99;
+    text-align: center;
 }
-
-.copy_right {
-    float: left;
+.footer-fixed{
+    position: fixed;
+    bottom: 0;
 }
-
 .copy_right p {
     font-size: 14px;
     color: #FFF;
@@ -830,43 +833,6 @@ li.grid_1_of_4:hover {
 
 
 /*  Preview  ============================================================================= */
-
-.back-links {
-    background: #23272a !important;
-    padding: 11px;
-    padding-left: 30px;
-    margin-bottom: 20px;
-    position: relative;
-    border-radius: 5px;
-}
-
-.back-links :after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.back-links li {
-    display: inline-block;
-    color: #fff;
-    font-size: 13px;
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-}
-
-.back-links li:first-child a {
-    padding-left: 0;
-}
-
-.back-links li a {
-    color: #FFF;
-    padding-left: 5px;
-}
-
-.back-links a:hover {
-    text-decoration: underline;
-    color: #e44f2b;
-}
 
 .image {
     clear: both;
@@ -942,7 +908,7 @@ li.grid_1_of_4:hover {
 
 .span_3_of_2 h2 {
     font-size: 26px;
-    color: #f7941e;
+    color: #474747;
     margin-top: 0px;
 }
 
@@ -1689,6 +1655,9 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
     -o-transition: .4s ease-in-out !important;
     transition: .4s ease-in-out !important;
     }
+    .menu .navigation li:after {
+	height: 0px;
+    }
     .nav-open{
         position: fixed;
         right:0 !important;
@@ -1848,7 +1817,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
         margin: 0;
     }
     .grid_1_of_4 img {
-        height: 120px;
+        height: 220px;
     }
 }
 
@@ -1920,12 +1889,12 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
         padding: 0;
     }
     .section li.images_1_of_4 {
-         width: 50%;
+         width: 49%;
         box-sizing: border-box;
-        margin: 0;  
+        margin: 0 0.5% 0 0.5%; 
         border: none;
         border-bottom: 1px solid #cbbbbb;
-        border-right: 1px solid #cbbbbb;
+        /*border-right: 1px solid #cbbbbb;*/
         box-shadow:none;
     }
     .ul_container ul.section.card_view{
@@ -2112,7 +2081,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 }
 
 .content .fan_bg,
-.content-bottom-right h3 {
+.content-bottom-right h3, .fan_bg {
     padding: 10px 50px;
     border-radius: 5px;
     background-color: #FFF;
@@ -2145,7 +2114,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 
 .navigation li {
     float: left;
-    border: 1px solid #03639b;
+   /* border: 1px solid #03639b;*/
     color: #03639b;
     padding: 10px 10px 10px 30px;
     background-position: 10px;
@@ -2154,8 +2123,8 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 }
 
 .navigation li:hover {
-    background-color: #03639b;
-    color: #FFF;
+   /* background-color: #03639b;*/
+    color: #e48109;
     background-position: 10px;
 }
 
@@ -2658,7 +2627,7 @@ to prevent collapsing during animation*/
     width: 100%;
     padding: 3px 0 3px 26px;
     box-sizing: border-box;
-    background: url(../img/warning.png) no-repeat rgb(235, 235, 235) 3px;
+    background: url(../img/warning.png) no-repeat 3px;
     margin-bottom: 5px;
     background-size: 19px;
     height: 27px;
@@ -2738,3 +2707,48 @@ to prevent collapsing during animation*/
 }
 
 /*   Hamburger Ends */
+
+.etalage_small_thumbs{
+    display:none;
+}
+.product-details{
+    margin-top: 10px;
+}
+#loader {
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #fefefe;
+ z-index: 99;
+ height: 100%;
+ }
+#status {
+ width: 200px;
+ height: 200px;
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ background-image: url(Preloader_4.gif);
+ background-repeat: no-repeat;
+ background-position: center;
+ margin: -100px 0 0 -100px;
+ }
+.red{
+color:red;
+}
+
+.navigation li:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 2px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+.navigation li:hover:after {
+	width: 100%;
+	background: #f7941e;
+}

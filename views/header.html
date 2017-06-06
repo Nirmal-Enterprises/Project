@@ -1,5 +1,8 @@
 <script>
        $(document).ready(function () {
+           $(window).on("load resize",function(e){
+
+           if ($(window).width() < 905) {
                 $("#nav-icon1 , .navigation li").click(function(){
                 $(".navigation").toggleClass("nav-open");
                 $("#nav-icon1").toggleClass('open');
@@ -8,6 +11,8 @@
                 $(".wrapper").toggleClass('active');    
                 });
            
+            };
+               });
         $(document).mouseup(function(e){
     var container = $(".navigation , .open");
             var newcontainer = $(".navigation li");
@@ -18,6 +23,7 @@
          $("body").removeClass('no-scroll');       $(".wrapper").removeClass('active');
     }
             });
+           
        });
            
 </script>
